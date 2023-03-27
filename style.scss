@@ -1,0 +1,765 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", "Roboto", sans-serif;
+  // border: 1px solid black;
+}
+:root {
+  --main-color: #223fa7;
+  --secondery-color: #77ffc3;
+  --dark-blue: #203066;
+  --lighter-blue: #385bd4;
+  --position: 50%;
+}
+.faded-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+.main-button {
+  font-weight: bold;
+  background-color: var(--secondery-color);
+  color: var(--dark-blue);
+  border: 1px solid var(--secondery-color);
+  padding: 16px 40px;
+  border-radius: 8px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.3s background;
+  &:hover {
+    background-color: #a5fdd4;
+  }
+}
+.hollow-button {
+  font-weight: bold;
+  background-color: transparent;
+  color: var(--dark-blue);
+  border: 1px solid var(--secondery-color);
+  padding: 16px 40px;
+  border-radius: 8px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.3s background;
+  &:hover {
+    background-color: var(--secondery-color);
+  }
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section {
+  // margin: 100px auto;
+}
+.flex-vertical {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+  max-width: 1440px;
+  margin: auto;
+}
+.secondary-color {
+  color: var(--secondery-color);
+}
+body {
+  position: relative;
+  // background-color: var(--main-color);
+  // height: 10000px;
+}
+nav {
+  border-bottom: 1px solid var(--lighter-blue);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  width: 100%;
+  // background-color: rgba($color: #223fa7, $alpha: 0.9);
+  background-color: var(--main-color);
+  .container {
+    padding: 0px 8px;
+    img {
+      width: 100px;
+    }
+    ul {
+      list-style: none;
+      li {
+        display: inline-block;
+        a {
+          display: block;
+          text-decoration: none;
+          color: white;
+          padding: 32px 12px;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 14px;
+          cursor: pointer;
+          transition: 0.2s;
+          &.active,
+          &:hover {
+            color: var(--secondery-color);
+          }
+        }
+      }
+    }
+  }
+}
+header {
+  position: relative;
+  background-color: var(--main-color);
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+  z-index: 1;
+  // background-color: var(--main-color);
+  .header-bg {
+    position: absolute;
+    // z-index: -1;
+    top: 40%;
+    // left:100%;
+    left: 0px;
+    max-width: 100%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  .car-hero {
+    position: absolute;
+    top: 70%;
+    transform: translate(-40%, -50%);
+    max-width: 100%;
+    z-index: 2;
+    left: 50%;
+  }
+  .container {
+    justify-content: space-between;
+    width: 90%;
+    // background-color: red;
+    // margin-top: 70px;
+    position: relative;
+    top: 120px;
+    // height: 100vh;
+    z-index: 3;
+    span.intro {
+      margin-left: 56px;
+      color: var(--secondery-color);
+      position: relative;
+      display: block;
+      width: 80px;
+      // font-size: 12px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 30px;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: -70%;
+        width: 50%;
+        height: 2px;
+        transform: translateY(-50%);
+        background-color: var(--secondery-color);
+      }
+    }
+    p.hero {
+      font-size: 57px;
+      font-weight: bold;
+      max-width: 400px;
+    }
+    button {
+      display: block;
+      margin-top: 30px;
+    }
+    .card {
+      display: block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      justify-content: space-between;
+      display: flex;
+      gap: 30px;
+      flex-direction: row-reverse;
+      box-shadow: 0px 0px 40px 0px rgba($color: #000000, $alpha: 0.3);
+      padding: 30px;
+      border: 1px solid var(--lighter-blue);
+      border-radius: 32px;
+      z-index: 3;
+      background-color: var(--main-color);
+      img {
+        border-radius: 50%;
+        width: 60px;
+      }
+      div {
+        gap: 18px;
+        align-items: flex-end;
+        p {
+          z-index: 3;
+          font-weight: bold;
+          font-size: 20px;
+        }
+        span.faded-text {
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: bold;
+          color: rgba($color: #fff, $alpha: 0.8);
+        }
+      }
+    }
+  }
+  .steps {
+    position: absolute;
+    width: 80%;
+    margin: auto;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(calc(-50% + 120px));
+    justify-content: space-evenly;
+    color: white;
+    p {
+      width: 100px;
+      // background-color: red;
+      position: relative;
+      font-weight: bold;
+      &::before {
+        content: "";
+        width: 120%;
+        position: absolute;
+        left: -140%;
+        top: 50%;
+        transform: translateY(-50%);
+        // width: 10px;
+        height: 1px;
+        background-color: var(--lighter-blue);
+      }
+    }
+  }
+}
+.experience {
+  background-color: var(--main-color);
+  color: white;
+  .container {
+    .grid {
+      // margin-top: 50px;
+      display: grid;
+      grid-template-columns: 70% 30%;
+      gap: 5%;
+      width: 80%;
+      margin: auto;
+      .details {
+        padding: 50px 30px;
+        // background-color: var(--lighter-blue);
+        background-color: #2d4cb8;
+        border-radius: 30px;
+        span.intro {
+          margin-left: 56px;
+          color: var(--secondery-color);
+          position: relative;
+          display: block;
+          width: 80px;
+          // font-size: 12px;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-bottom: 30px;
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: -70%;
+            width: 50%;
+            height: 2px;
+            transform: translateY(-50%);
+            background-color: var(--secondery-color);
+          }
+        }
+        p.heading {
+          font-size: 56px;
+          font-weight: bold;
+          margin: 30px 0px 50px;
+          // max-width: 500px;
+        }
+        span {
+          font-weight: bold;
+        }
+        p.faded-text {
+          line-height: 200%;
+          // max-width: 600px;
+        }
+        > .flex {
+          margin-top: 50px;
+          justify-content: left;
+          gap: 100px;
+          align-items: center;
+        }
+        .feedback {
+          // background-color: red;
+          gap: 30px;
+          width: 300px;
+          line-height: 150%;
+          padding: 9px;
+        }
+      }
+      .image {
+        background-image: url("/images/carwash3-wrap-bg1.webp");
+        background-size: cover;
+        background-color: white;
+        border-radius: 30px;
+        background-repeat: no-repeat;
+        color: var(--main-color);
+        font-size: 1.5em;
+        text-transform: capitalize;
+        font-weight: bold;
+        span.important {
+          font-size: 2em;
+          text-transform: uppercase;
+        }
+        .shield {
+          background-color: #5575e7;
+          display: block;
+          text-align: center;
+          width: 120px;
+          height: 120px;
+          display: grid;
+          place-content: center;
+          margin: 50px auto;
+          // padding: 40px;
+          border-radius: 50%;
+          img {
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.strength_points {
+  background-color: var(--main-color);
+  padding-top: 150px;
+  .container {
+    .header {
+      width: 40%;
+      margin: 0px auto 100px;
+      .small {
+        color: var(--secondery-color);
+        display: block;
+        text-align: center;
+      }
+      .hero {
+        font-size: 50px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        margin: 20px 0px;
+      }
+      .faded-text {
+        text-align: center;
+      }
+    }
+    .flex {
+      position: relative;
+      justify-content: space-between;
+      > .flex-vertical {
+        gap: 50px;
+        .feature {
+          position: relative;
+          align-items: flex-end;
+          width: 50%;
+          text-align: right;
+          gap: 15px;
+          .number {
+            text-align: left;
+            font-weight: bold;
+            color: var(--secondery-color);
+            &::before {
+              content: "";
+              width: 50%;
+              height: 1px;
+              position: absolute;
+              top: 9px;
+              right: 30px;
+              background-color: var(--secondery-color);
+            }
+          }
+          .name {
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+          }
+          img {
+            width: 100px;
+            padding: 20px;
+            border: 1px solid var(--lighter-blue);
+            border-radius: 8px;
+          }
+        }
+        &:first-child {
+          .feature {
+            text-align: left;
+            align-items: flex-start;
+            .number {
+              text-align: left;
+              &::before {
+                content: "";
+                width: 50%;
+                height: 1px;
+                position: absolute;
+                top: 9px;
+                left: 30px;
+                background-color: var(--secondery-color);
+              }
+            }
+          }
+        }
+      }
+      > img {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+        width: 35%;
+        // height: 120%;
+        // opacity: 0;
+      }
+    }
+  }
+}
+.slider {
+  position: relative;
+  top: 150px;
+  .flex {
+    height: 600px;
+    justify-content: center;
+    .text {
+      width: 30%;
+      background-color: white;
+      height: 100%;
+      align-items: flex-start;
+      padding: 60px;
+      gap: 30px;
+      border-bottom-left-radius: 16px;
+      border-top-left-radius: 16px;
+      background-image: url("./images/carwash3-wrap-bg3.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      .small {
+        font-size: 14px;
+        color: var(--main-color);
+        font-weight: bold;
+        position: relative;
+        &::before {
+          content: "";
+          width: 40px;
+          height: 2px;
+          background-color: var(--main-color);
+          position: absolute;
+          right: calc(100% + 5px);
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      .hero {
+        font-size: 50px;
+        font-weight: bold;
+        color: var(--main-color);
+      }
+      button {
+        background-color: white;
+        transition: 0.3s;
+        border-color: var(--secondery-color);
+        &:hover {
+          background-color: var(--secondery-color);
+        }
+      }
+    }
+    .slider-container {
+      height: 100%;
+      width: fit-content;
+      position: relative;
+      .before-after {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        justify-content: space-between;
+        z-index: 5;
+        transition: 0.5s opacity;
+        p {
+          background-color: white;
+          padding: 8px 12px;
+          border-radius: 5px;
+          margin: 10px;
+          color: #a6b7f5;
+          // opacity: 0;
+        }
+        &.hidden {
+          opacity: 0;
+        }
+      }
+      .img-container {
+        img {
+          display: block;
+          max-width: 100%;
+          object-fit: cover;
+          object-position: left;
+          height: 600px;
+        }
+        .top {
+          position: absolute;
+          height: 100%;
+          inset: 0;
+          top: 0px;
+          width: var(--position);
+          z-index: 4;
+        }
+      }
+      input {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-50%);
+        opacity: 0;
+        z-index: 11;
+      }
+      svg {
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        left: var(--position);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        outline: 2px solid white;
+        z-index: 10;
+      }
+      .bolder {
+        z-index: 10;
+        pointer-events: none;
+        position: absolute;
+        height: 100%;
+        width: 2px;
+        background-color: white;
+        left: var(--position);
+        transform: translateX(-50%);
+        top: 0px;
+      }
+    }
+  }
+}
+.big-container {
+  background-color: var(--main-color);
+  position: relative;
+}
+.testmonials {
+  background-image: url("./images/carwash3-section-bg1.webp");
+  background-color: #f0f4f4;
+  margin-bottom: 0px;
+  padding: 150px 0px;
+  .container {
+    margin-top: 150px;
+  }
+  .comment {
+    color: var(--main-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+    .intro {
+      font-weight: bold;
+      font-size: 50px;
+      max-width: 300px;
+    }
+    .person {
+      background-image: linear-gradient(bottom, white, transparent);
+      border-radius: 16px;
+      img {
+        width: 265px;
+      }
+    }
+    .card {
+      background-color: white;
+      padding: 50px;
+      border-radius: 16px;
+      .flex {
+        gap: 30px;
+        align-items: center;
+      }
+      .small {
+        line-height: 150%;
+        max-width: 500px;
+      }
+      > p {
+        padding-top: 70px;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: right;
+      }
+    }
+    div {
+      .flex {
+        flex-direction: row-reverse;
+        justify-content: left;
+
+        .bubble {
+          width: 50px;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+  .display {
+    margin: 150px auto;
+    position: relative;
+    height: 375px;
+    // display: grid;
+    // place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      // left: 0px;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .content {
+      z-index: 2;
+      p {
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        color: var(--main-color);
+        &.small {
+          font-size: 14px;
+          font-weight: normal;
+        }
+      }
+      button {
+        display: block;
+        margin: 50px auto;
+      }
+    }
+  }
+  .subscription {
+    background-image: url("./images/carwash3-section-bg2.webp");
+    display: flex;
+    gap: calc(6% / 3);
+    background-size: cover;
+    .card {
+      padding: 60px 30px;
+      width: 23%;
+      gap: 50px;
+      background-color: white;
+      border-radius: 32px;
+      color: var(--main-color);
+      &:last-child {
+        background-color: var(--main-color);
+        * {
+          color: white;
+        }
+      }
+      * {
+        width: 90%;
+        text-align: center;
+        justify-content: left;
+      }
+      .name {
+        font-size: 30px;
+        // font-weight: bold;
+        text-transform: capitalize;
+      }
+      .price {
+        font-size: 50px;
+        font-weight: bold;
+      }
+      ul {
+        list-style-type: none;
+        li {
+          margin: 020px 0px;
+          gap: 15px;
+          &.disabled {
+            color: #b7b7b7;
+          }
+          svg {
+            width: 20px;
+            background-color: var(--secondery-color);
+            padding: 2px;
+            &.minus {
+              background-color: #b7b7b7;
+            }
+            path {
+              fill: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+footer {
+  padding: 30px 0px 0px;
+  background-color: white;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  color: var(--main-color);
+  .container {
+    position: relative;
+    > img {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30%;
+      top: -20%;
+    }
+  }
+  .offer {
+    align-items: center;
+    height: 250px;
+    div {
+      p {
+        font-size: 30px;
+        font-weight: bold;
+        color: var(--main-color);
+        max-width: 75%;
+      }
+      span {
+        display: block;
+        margin-top: 50px;
+        font-size: 50px;
+        font-weight: bold;
+        color: #c8aff5;
+      }
+    }
+  }
+  .contacts {
+    margin-top: 50px;
+    .number {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .small {
+      max-width: 250px;
+    }
+  }
+  .copyrights {
+    padding: 30px 0px;
+    button {
+      background-color: transparent;
+      border: 1px solid black;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-content: center;
+      border-radius: 8px;
+    }
+  }
+}
