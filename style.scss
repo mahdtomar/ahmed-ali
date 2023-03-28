@@ -16,6 +16,16 @@
   --normal: 20px;
   --small: 14px;
 }
+.close-icon {
+  // display: ;
+  width: 20px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  path {
+    fill: white;
+  }
+}
 .faded-text {
   color: rgba(255, 255, 255, 0.8);
 }
@@ -70,6 +80,7 @@ body {
   // background-color: var(--main-color);
   // height: 10000px;
 }
+
 nav {
   border-bottom: 1px solid var(--lighter-blue);
   position: fixed;
@@ -81,13 +92,13 @@ nav {
   background-color: var(--main-color);
   .container {
     padding: 0px 8px;
+    .menu {
+      display: none;
+    }
     img {
       width: 100px;
     }
     ul {
-      .menu {
-        display: none;
-      }
       list-style: none;
       li {
         display: inline-block;
@@ -774,14 +785,11 @@ footer {
   nav {
     padding: 8px;
     .container {
-      ul {
-        .menu {
-          display: block;
-          width: 40px;
-          cursor: pointer;
-          path {
-            fill: var(--secondery-color);
-          }
+      .menu {
+        width: 40px;
+        cursor: pointer;
+        path {
+          fill: var(--secondery-color);
         }
         li {
           display: none;
@@ -832,6 +840,39 @@ footer {
     flex-direction: column;
   }
   nav {
+    .container {
+      .menu {
+        display: block;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 250px;
+        right: 0px;
+        top: 0%;
+        align-items: flex-start;
+        background-color: var(--main-color);
+        justify-content: center;
+        z-index: 999;
+        transform: translateX(100%);
+        transition: 0.3s;
+        &.visible {
+          transform: translateX(0px);
+        }
+        li {
+          border-top: 1px solid var(--lighter-blue);
+          width: 100%;
+          display: block;
+          a {
+            padding: 16px;
+            display: block;
+          }
+        }
+      }
+    }
     div.flex {
       flex-direction: row;
     }
