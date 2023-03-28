@@ -1282,10 +1282,10 @@ footer .copyrights button {
 
 @media (max-width: 500px) {
   nav div.flex {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
   header .car-hero {
     top: 50%;
