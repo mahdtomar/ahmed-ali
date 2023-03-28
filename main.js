@@ -1,13 +1,24 @@
 const root = document.querySelector(":root");
 const caption = document.querySelector(".before-after");
 const number = document.querySelector(".counter");
-const prices = document.querySelectorAll(".price");
-console.log(prices);
+const counterTargets = document.querySelectorAll(".observed");
+const obseveTargets = [];
+obseveTargets.push(number);
+counterTargets.forEach((price) => {
+  console.log(price);
+  obseveTargets.push(price);
+});
+
+console.log(counterTargets);
 function increment(count, target, targervalue) {
   setInterval(() => {
     if (count < targervalue) {
-      count++;
+      // count++;
+      targervalue > 1000 ? (count = count + 30) : count++;
       target.innerText = count;
+      if (target.innerText > targervalue) {
+        target.innerText = targervalue;
+      }
     }
   }, 5);
 }
@@ -15,6 +26,9 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     let count = 0;
     let target = entry.target;
+    if (entry.isIntersecting) {
+      observer.unobserve(entry.target);
+    }
     let targetNumber = parseInt(entry.target.getAttribute("data-value"));
     console.log(parseInt(targetNumber));
     entry.target.textContent = 0;
@@ -22,7 +36,9 @@ const observer = new IntersectionObserver((entries) => {
   });
   console.log(entries);
 });
-observer.observe(number);
+obseveTargets.forEach((target) => {
+  observer.observe(target);
+});
 let rootStyles = getComputedStyle(root);
 document.querySelector("#slider").addEventListener("input", (e) => {
   root.style.setProperty("--position", `${e.target.value}%`);
@@ -34,6 +50,7 @@ document.querySelector("#slider").addEventListener("mouseleave", (e) => {
   caption.classList.remove("hidden");
 });
 $(".menu").click(function () {
+  $("close-icon").css("display");
   $(".nav_ul").addClass("visible");
 });
 $(".close-icon").click(function () {

@@ -19,6 +19,7 @@
 }
 
 .close-icon {
+  display: none;
   width: 20px;
   position: absolute;
   top: 30px;
@@ -1047,6 +1048,10 @@ footer .copyrights button {
   nav .container ul.visible {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
+  }
+  nav .container ul .close-icon {
+    display: block;
+    cursor: pointer;
   }
   nav .container ul li {
     border-top: 1px solid var(--lighter-blue);

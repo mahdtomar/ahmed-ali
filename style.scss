@@ -3,7 +3,6 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "IBM Plex Sans", "Roboto", sans-serif;
-  // border: 1px solid black;
 }
 :root {
   --main-color: #223fa7;
@@ -17,7 +16,7 @@
   --small: 14px;
 }
 .close-icon {
-  // display: ;
+  display: none;
   width: 20px;
   position: absolute;
   top: 30px;
@@ -861,6 +860,9 @@ footer {
         transition: 0.3s;
         &.visible {
           transform: translateX(0px);
+        }.close-icon{
+          display: block;
+          cursor: pointer;
         }
         li {
           border-top: 1px solid var(--lighter-blue);
