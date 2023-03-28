@@ -12,6 +12,10 @@
   --dark-blue: #203066;
   --lighter-blue: #385bd4;
   --position: 50%;
+  --xlarge: 50px;
+  --large: 30px;
+  --normal: 20px;
+  --small: 14px;
 }
 
 .faded-text {
@@ -80,6 +84,7 @@
 .container {
   max-width: 1440px;
   margin: auto;
+  padding: 0px 8px;
 }
 
 .secondary-color {
@@ -112,6 +117,10 @@ nav .container ul {
   list-style: none;
 }
 
+nav .container ul .menu {
+  display: none;
+}
+
 nav .container ul li {
   display: inline-block;
 }
@@ -123,7 +132,7 @@ nav .container ul li a {
   padding: 32px 12px;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 14px;
+  font-size: var(--small);
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -247,7 +256,7 @@ header .container .card div {
 header .container .card div p {
   z-index: 3;
   font-weight: bold;
-  font-size: 20px;
+  font-size: var(--normal);
 }
 
 header .container .card div span.faded-text {
@@ -417,7 +426,7 @@ header .steps p::before {
 }
 
 .strength_points .container .header .hero {
-  font-size: 50px;
+  font-size: var(--xlarge);
   font-weight: bold;
   color: white;
   text-align: center;
@@ -538,7 +547,7 @@ header .steps p::before {
 }
 
 .slider .flex .text .small {
-  font-size: 14px;
+  font-size: var(--small);
   color: var(--main-color);
   font-weight: bold;
   position: relative;
@@ -557,7 +566,7 @@ header .steps p::before {
 }
 
 .slider .flex .text .hero {
-  font-size: 50px;
+  font-size: var(--xlarge);
   font-weight: bold;
   color: var(--main-color);
 }
@@ -697,7 +706,7 @@ header .steps p::before {
 
 .testmonials .comment .intro {
   font-weight: bold;
-  font-size: 50px;
+  font-size: var(--xlarge);
   max-width: 300px;
 }
 
@@ -732,7 +741,7 @@ header .steps p::before {
 .testmonials .comment .card > p {
   padding-top: 70px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: var(--normal);
   text-align: right;
 }
 
@@ -777,6 +786,7 @@ header .steps p::before {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 1;
+  max-width: 100%;
 }
 
 .testmonials .display .content {
@@ -785,13 +795,13 @@ header .steps p::before {
 
 .testmonials .display .content p {
   text-align: center;
-  font-size: 50px;
+  font-size: var(--xlarge);
   font-weight: bold;
   color: var(--main-color);
 }
 
 .testmonials .display .content p.small {
-  font-size: 14px;
+  font-size: var(--small);
   font-weight: normal;
 }
 
@@ -835,12 +845,12 @@ header .steps p::before {
 }
 
 .testmonials .subscription .card .name {
-  font-size: 30px;
+  font-size: var(--large);
   text-transform: capitalize;
 }
 
 .testmonials .subscription .card .price {
-  font-size: 50px;
+  font-size: var(--xlarge);
   font-weight: bold;
 }
 
@@ -900,7 +910,7 @@ footer .offer {
 }
 
 footer .offer div p {
-  font-size: 30px;
+  font-size: var(--large);
   font-weight: bold;
   color: var(--main-color);
   max-width: 75%;
@@ -909,7 +919,7 @@ footer .offer div p {
 footer .offer div span {
   display: block;
   margin-top: 50px;
-  font-size: 50px;
+  font-size: var(--xlarge);
   font-weight: bold;
   color: #c8aff5;
 }
@@ -920,7 +930,7 @@ footer .contacts {
 }
 
 footer .contacts .number {
-  font-size: 30px;
+  font-size: var(--large);
   font-weight: bold;
 }
 
@@ -942,5 +952,538 @@ footer .copyrights button {
   display: grid;
   place-content: center;
   border-radius: 8px;
+}
+
+@media (max-width: 1280px) {
+  nav {
+    padding: 8px;
+  }
+  nav .container ul .menu {
+    display: block;
+    width: 40px;
+    cursor: pointer;
+  }
+  nav .container ul .menu path {
+    fill: var(--secondery-color);
+  }
+  nav .container ul li {
+    display: none;
+  }
+  nav .container ul li a {
+    padding: 16px 12px;
+  }
+  header .car-hero {
+    top: 70%;
+  }
+  header .container .card {
+    gap: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    z-index: 3;
+  }
+  .experience {
+    padding-top: 50px;
+  }
+  .experience .container .grid .image .car {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 940px) {
+  .container {
+    width: 100%;
+  }
+  :root {
+    --xlarge: 40px;
+    --large: 20px;
+    --normal: 14px;
+    --small: 10px;
+  }
+  .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav div.flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  header .car-hero {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 40%;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  header .container .card {
+    display: none;
+  }
+  header .steps {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  header .steps p::before {
+    left: -60px;
+    width: 50px;
+  }
+  .experience {
+    background-color: var(--main-color);
+    color: white;
+  }
+  .experience .container {
+    padding: 10px;
+  }
+  .experience .container .grid {
+    width: 100%;
+    display: block;
+  }
+  .experience .container .grid .details p.heading {
+    font-size: var(--xlarge);
+  }
+  .experience .container .grid .details .image {
+    margin-top: 50px;
+  }
+  .strength_points {
+    padding-top: 30px;
+  }
+  .strength_points .container .header {
+    margin: auto;
+  }
+  .strength_points .container .flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .slider {
+    top: 50px;
+  }
+  .slider .flex {
+    height: auto;
+  }
+  .slider .flex .text {
+    background-position: left;
+    margin-top: 0px;
+    width: 80%;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .slider .flex .text > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .slider .flex .text > div button {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .slider .flex .slider-container {
+    width: 80%;
+  }
+  .slider .flex .slider-container .before-after {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .testmonials {
+    margin-bottom: 0px;
+    padding: 180px 0px;
+  }
+  .testmonials .container {
+    margin-top: 0px;
+  }
+  .testmonials .comment {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .testmonials .display {
+    margin: 150px auto;
+    position: relative;
+    height: 375px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .testmonials .display img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 1;
+    max-width: 100%;
+  }
+  .testmonials .display .content {
+    z-index: 2;
+  }
+  .testmonials .display .content p {
+    text-align: center;
+    font-size: var(--xlarge);
+    font-weight: bold;
+    color: var(--main-color);
+  }
+  .testmonials .display .content p.small {
+    font-size: var(--small);
+    font-weight: normal;
+  }
+  .testmonials .display .content button {
+    display: block;
+    margin: 50px auto;
+  }
+  .testmonials .subscription {
+    background-image: url("./images/carwash3-section-bg2.webp");
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: calc(6% / 3);
+    background-size: cover;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .testmonials .subscription .card {
+    padding: 60px 30px;
+    min-width: 250px;
+    width: 40%;
+    gap: 50px;
+    margin: 20px 0px;
+  }
+  .testmonials .subscription .card ul li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer .container {
+    position: relative;
+  }
+  footer .container > img {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 30%;
+    top: -20%;
+  }
+  footer .offer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer .contacts {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer .copyrights {
+    padding: 30px 0px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (max-width: 500px) {
+  nav div.flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .car-hero {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    left: 40%;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  header .container p.hero {
+    font-size: var(--xlarge);
+  }
+  header .container .card {
+    display: none;
+  }
+  header .steps {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    justify-items: end;
+  }
+  header .steps p {
+    margin: 8px 0px;
+    width: 50%;
+  }
+  header .steps p::before {
+    left: -60px;
+    width: 50px;
+  }
+  .experience {
+    background-color: var(--main-color);
+    color: white;
+  }
+  .experience .container .grid {
+    display: block;
+  }
+  .experience .container .grid .image {
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+  .strength_points {
+    padding-top: 30px;
+  }
+  .strength_points .container .header {
+    width: 90%;
+    margin: auto;
+  }
+  .strength_points .container .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .strength_points .container .flex > .flex-vertical {
+    gap: 50px;
+  }
+  .strength_points .container .flex > .flex-vertical .feature {
+    position: relative;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50%;
+    text-align: center;
+    gap: 15px;
+  }
+  .strength_points .container .flex > .flex-vertical .feature .number {
+    text-align: center;
+    font-weight: bold;
+    color: var(--secondery-color);
+  }
+  .strength_points .container .flex > .flex-vertical .feature .number::before {
+    content: "";
+    width: 20%;
+    height: 1px;
+    position: absolute;
+    top: 9px;
+    left: 30px;
+    background-color: var(--secondery-color);
+  }
+  .strength_points .container .flex > .flex-vertical .feature .name {
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .strength_points .container .flex > .flex-vertical .feature img {
+    width: 100px;
+    padding: 20px;
+    border: 1px solid var(--lighter-blue);
+    border-radius: 8px;
+  }
+  .strength_points .container .flex > .flex-vertical:first-child .feature {
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .strength_points .container .flex > .flex-vertical:first-child .feature .number {
+    text-align: center;
+  }
+  .strength_points .container .flex > .flex-vertical:first-child .feature .number::before {
+    content: "";
+    width: 25%;
+    height: 1px;
+    position: absolute;
+    top: 9px;
+    left: 30px;
+    background-color: var(--secondery-color);
+  }
+  .strength_points .container .flex > img {
+    position: static;
+    -webkit-transform: none;
+            transform: none;
+    width: 90%;
+    margin-top: 50px;
+  }
+  .slider {
+    top: 50px;
+  }
+  .slider .flex {
+    height: auto;
+  }
+  .slider .flex .text {
+    padding: 30px;
+    width: 90%;
+  }
+  .slider .flex .slider-container {
+    width: 90%;
+  }
+  .slider .flex .slider-container .before-after {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .testmonials {
+    margin-bottom: 0px;
+    padding: 180px 0px;
+  }
+  .testmonials .container {
+    margin-top: 0px;
+  }
+  .testmonials .comment {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .testmonials .display {
+    margin: 150px auto;
+    position: relative;
+    height: 375px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .testmonials .display img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 1;
+    max-width: 100%;
+  }
+  .testmonials .display .content {
+    z-index: 2;
+  }
+  .testmonials .display .content p {
+    text-align: center;
+    font-size: var(--xlarge);
+    font-weight: bold;
+    color: var(--main-color);
+  }
+  .testmonials .display .content p.small {
+    font-size: var(--small);
+    font-weight: normal;
+  }
+  .testmonials .display .content button {
+    display: block;
+    margin: 50px auto;
+  }
+  .testmonials .subscription {
+    background-image: url("./images/carwash3-section-bg2.webp");
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: calc(6% / 3);
+    background-size: cover;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .testmonials .subscription .card {
+    padding: 60px 30px;
+    min-width: 250px;
+    width: 90%;
+    gap: 50px;
+    margin: 20px 0px;
+  }
+  .testmonials .subscription .card ul li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer {
+    padding-top: 90px;
+  }
+  footer .container {
+    position: relative;
+  }
+  footer .container > img {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 30%;
+    top: -20%;
+  }
+  footer .offer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer .contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+  footer .copyrights {
+    padding: 30px 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=style.css.map */

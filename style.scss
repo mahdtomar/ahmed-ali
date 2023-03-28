@@ -11,6 +11,10 @@
   --dark-blue: #203066;
   --lighter-blue: #385bd4;
   --position: 50%;
+  --xlarge: 50px;
+  --large: 30px;
+  --normal: 20px;
+  --small: 14px;
 }
 .faded-text {
   color: rgba(255, 255, 255, 0.8);
@@ -48,9 +52,6 @@
   justify-content: space-between;
   align-items: center;
 }
-section {
-  // margin: 100px auto;
-}
 .flex-vertical {
   display: flex;
   align-items: center;
@@ -59,6 +60,7 @@ section {
 .container {
   max-width: 1440px;
   margin: auto;
+  padding: 0px 8px;
 }
 .secondary-color {
   color: var(--secondery-color);
@@ -83,6 +85,9 @@ nav {
       width: 100px;
     }
     ul {
+      .menu {
+        display: none;
+      }
       list-style: none;
       li {
         display: inline-block;
@@ -93,7 +98,7 @@ nav {
           padding: 32px 12px;
           text-transform: uppercase;
           font-weight: bold;
-          font-size: 14px;
+          font-size: var(--small);
           cursor: pointer;
           transition: 0.2s;
           &.active,
@@ -196,7 +201,7 @@ header {
         p {
           z-index: 3;
           font-weight: bold;
-          font-size: 20px;
+          font-size: var(--normal);
         }
         span.faded-text {
           text-transform: uppercase;
@@ -347,7 +352,7 @@ header {
         text-align: center;
       }
       .hero {
-        font-size: 50px;
+        font-size: var(--xlarge);
         font-weight: bold;
         color: white;
         text-align: center;
@@ -445,7 +450,7 @@ header {
       background-repeat: no-repeat;
       background-position: bottom;
       .small {
-        font-size: 14px;
+        font-size: var(--small);
         color: var(--main-color);
         font-weight: bold;
         position: relative;
@@ -461,7 +466,7 @@ header {
         }
       }
       .hero {
-        font-size: 50px;
+        font-size: var(--xlarge);
         font-weight: bold;
         color: var(--main-color);
       }
@@ -571,7 +576,7 @@ header {
     gap: 50px;
     .intro {
       font-weight: bold;
-      font-size: 50px;
+      font-size: var(--xlarge);
       max-width: 300px;
     }
     .person {
@@ -596,7 +601,7 @@ header {
       > p {
         padding-top: 70px;
         font-weight: bold;
-        font-size: 20px;
+        font-size: var(--normal);
         text-align: right;
       }
     }
@@ -629,16 +634,17 @@ header {
       // left: 0px;
       transform: translate(-50%, -50%);
       z-index: 1;
+      max-width: 100%;
     }
     .content {
       z-index: 2;
       p {
         text-align: center;
-        font-size: 50px;
+        font-size: var(--xlarge);
         font-weight: bold;
         color: var(--main-color);
         &.small {
-          font-size: 14px;
+          font-size: var(--small);
           font-weight: normal;
         }
       }
@@ -672,12 +678,12 @@ header {
         justify-content: left;
       }
       .name {
-        font-size: 30px;
+        font-size: var(--large);
         // font-weight: bold;
         text-transform: capitalize;
       }
       .price {
-        font-size: 50px;
+        font-size: var(--xlarge);
         font-weight: bold;
       }
       ul {
@@ -725,7 +731,7 @@ footer {
     height: 250px;
     div {
       p {
-        font-size: 30px;
+        font-size: var(--large);
         font-weight: bold;
         color: var(--main-color);
         max-width: 75%;
@@ -733,7 +739,7 @@ footer {
       span {
         display: block;
         margin-top: 50px;
-        font-size: 50px;
+        font-size: var(--xlarge);
         font-weight: bold;
         color: #c8aff5;
       }
@@ -743,7 +749,7 @@ footer {
     padding: 30px 0px;
     margin-top: 50px;
     .number {
-      font-size: 30px;
+      font-size: var(--large);
       font-weight: bold;
     }
     .small {
@@ -761,6 +767,480 @@ footer {
       display: grid;
       place-content: center;
       border-radius: 8px;
+    }
+  }
+}
+@media (max-width: 1280px) {
+  nav {
+    padding: 8px;
+    .container {
+      ul {
+        .menu {
+          display: block;
+          width: 40px;
+          cursor: pointer;
+          path {
+            fill: var(--secondery-color);
+          }
+        }
+        li {
+          display: none;
+          a {
+            padding: 16px 12px;
+          }
+        }
+      }
+    }
+  }
+  header {
+    .car-hero {
+      top: 70%;
+    }
+    .container {
+      .card {
+        gap: 15px;
+        padding: 15px;
+        border-radius: 20px;
+        z-index: 3;
+      }
+    }
+  }
+  .experience {
+    padding-top: 50px;
+    .container {
+      .grid {
+        .image {
+          .car {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 940px) {
+  .container {
+    width: 100%;
+  }
+  :root {
+    --xlarge: 40px;
+    --large: 20px;
+    --normal: 14px;
+    --small: 10px;
+  }
+  .flex {
+    flex-direction: column;
+  }
+  nav {
+    div.flex {
+      flex-direction: row;
+    }
+  }
+  header {
+    .car-hero {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 40%;
+      transform: scale(1.5);
+    }
+    .container {
+      .card {
+        display: none;
+      }
+    }
+    .steps {
+      flex-direction: row;
+      transform: translateX(-50% + 0);
+      p {
+        &::before {
+          left: -60px;
+          width: 50px;
+        }
+      }
+    }
+  }
+  .experience {
+    background-color: var(--main-color);
+    color: white;
+    .container {
+      padding: 10px;
+      .grid {
+        width: 100%;
+        display: block;
+        .details {
+          p.heading {
+            font-size: var(--xlarge);
+          }
+          .image {
+            margin-top: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  .strength_points {
+    padding-top: 30px;
+    .container {
+      .header {
+        margin: auto;
+      }
+      .flex {
+        flex-direction: row;
+      }
+    }
+  }
+  .slider {
+    top: 50px;
+    .flex {
+      height: auto;
+      .text {
+        background-position: left;
+        margin-top: 0px;
+        width: 80%;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        flex-direction: column;
+        > div {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          button {
+            height: fit-content;
+          }
+        }
+      }
+      .slider-container {
+        width: 80%;
+        .before-after {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+  .testmonials {
+    margin-bottom: 0px;
+    padding: 180px 0px;
+    .container {
+      margin-top: 0px;
+    }
+    .comment {
+      flex-wrap: wrap;
+    }
+    .display {
+      margin: 150px auto;
+      position: relative;
+      height: 375px;
+      // display: grid;
+      // place-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        // left: 0px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        max-width: 100%;
+      }
+      .content {
+        z-index: 2;
+        p {
+          text-align: center;
+          font-size: var(--xlarge);
+          font-weight: bold;
+          color: var(--main-color);
+          &.small {
+            font-size: var(--small);
+            font-weight: normal;
+          }
+        }
+        button {
+          display: block;
+          margin: 50px auto;
+        }
+      }
+    }
+    .subscription {
+      background-image: url("./images/carwash3-section-bg2.webp");
+      display: flex;
+      gap: calc(6% / 3);
+      background-size: cover;
+      flex-wrap: wrap;
+      justify-content: center;
+      .card {
+        padding: 60px 30px;
+        min-width: 250px;
+        width: 40%;
+        gap: 50px;
+        margin: 20px 0px;
+
+        ul {
+          li {
+            flex-direction: row;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    .container {
+      position: relative;
+      > img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30%;
+        top: -20%;
+      }
+    }
+    .offer {
+      flex-direction: row;
+    }
+    .contacts {
+      flex-direction: row;
+    }
+    .copyrights {
+      padding: 30px 0px;
+      flex-direction: row;
+    }
+  }
+}
+@media (max-width: 500px) {
+  nav {
+    div.flex {
+      flex-direction: column;
+    }
+  }
+  header {
+    .car-hero {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 40%;
+      transform: scale(1.5);
+    }
+    .container {
+      p.hero {
+        font-size: var(--xlarge);
+      }
+      .card {
+        display: none;
+      }
+    }
+    .steps {
+      flex-direction: row;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: end;
+      p {
+        margin: 8px 0px;
+        width: 50%;
+
+        &::before {
+          left: -60px;
+          width: 50px;
+        }
+      }
+    }
+  }
+  .experience {
+    background-color: var(--main-color);
+    color: white;
+    .container {
+      .grid {
+        display: block;
+        .image {
+          margin-top: 50px;
+          padding-bottom: 50px;
+        }
+      }
+    }
+  }
+
+  .strength_points {
+    padding-top: 30px;
+    .container {
+      .header {
+        width: 90%;
+        margin: auto;
+      }
+      .flex {
+        flex-direction: column-reverse;
+        > .flex-vertical {
+          gap: 50px;
+          .feature {
+            position: relative;
+            align-items: center;
+            width: 50%;
+            text-align: center;
+            gap: 15px;
+            .number {
+              text-align: center;
+              font-weight: bold;
+              color: var(--secondery-color);
+              &::before {
+                content: "";
+                width: 20%;
+                height: 1px;
+                position: absolute;
+                top: 9px;
+                left: 30px;
+                background-color: var(--secondery-color);
+              }
+            }
+            .name {
+              color: white;
+              font-weight: bold;
+              font-size: 22px;
+            }
+            img {
+              width: 100px;
+              padding: 20px;
+              border: 1px solid var(--lighter-blue);
+              border-radius: 8px;
+            }
+          }
+          &:first-child {
+            .feature {
+              text-align: center;
+              align-items: center;
+              .number {
+                text-align: center;
+                &::before {
+                  content: "";
+                  width: 25%;
+                  height: 1px;
+                  position: absolute;
+                  top: 9px;
+                  left: 30px;
+                  background-color: var(--secondery-color);
+                }
+              }
+            }
+          }
+        }
+        > img {
+          position: static;
+          transform: none;
+          width: 90%;
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+  .slider {
+    top: 50px;
+    .flex {
+      height: auto;
+      .text {
+        padding: 30px;
+        width: 90%;
+      }
+      .slider-container {
+        width: 90%;
+        .before-after {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+  .testmonials {
+    margin-bottom: 0px;
+    padding: 180px 0px;
+    .container {
+      margin-top: 0px;
+    }
+    .comment {
+      flex-wrap: wrap;
+    }
+    .display {
+      margin: 150px auto;
+      position: relative;
+      height: 375px;
+      // display: grid;
+      // place-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        // left: 0px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        max-width: 100%;
+      }
+      .content {
+        z-index: 2;
+        p {
+          text-align: center;
+          font-size: var(--xlarge);
+          font-weight: bold;
+          color: var(--main-color);
+          &.small {
+            font-size: var(--small);
+            font-weight: normal;
+          }
+        }
+        button {
+          display: block;
+          margin: 50px auto;
+        }
+      }
+    }
+    .subscription {
+      background-image: url("./images/carwash3-section-bg2.webp");
+      display: flex;
+      gap: calc(6% / 3);
+      background-size: cover;
+      flex-wrap: wrap;
+      justify-content: center;
+      .card {
+        padding: 60px 30px;
+        min-width: 250px;
+        width: 90%;
+        gap: 50px;
+        margin: 20px 0px;
+
+        ul {
+          li {
+            flex-direction: row;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    padding-top: 90px;
+    .container {
+      position: relative;
+      > img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30%;
+        top: -20%;
+      }
+    }
+    .offer {
+      flex-direction: column;
+    }
+    .contacts {
+      flex-direction: column;
+      gap: 40px;
+      text-align: center;
+    }
+    .copyrights {
+      padding: 30px 0px;
+      flex-direction: column;
     }
   }
 }
