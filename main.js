@@ -2,14 +2,15 @@ const root = document.querySelector(":root");
 const caption = document.querySelector(".before-after");
 const number = document.querySelector(".counter");
 const counterTargets = document.querySelectorAll(".observed");
+const background = document.querySelector("background");
 const obseveTargets = [];
 obseveTargets.push(number);
 counterTargets.forEach((price) => {
-  console.log(price);
+  // console.log(price);
   obseveTargets.push(price);
 });
 
-console.log(counterTargets);
+// console.log(counterTargets);
 function increment(count, target, targervalue) {
   setInterval(() => {
     if (count < targervalue) {
@@ -22,6 +23,10 @@ function increment(count, target, targervalue) {
     }
   }, 10);
 }
+$(".background").click(function () {
+  $(".nav_ul").removeClass("visible");
+  $(".background").removeClass("visible");
+});
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     let count = 0;
@@ -30,11 +35,11 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
     let targetNumber = parseInt(entry.target.getAttribute("data-value"));
-    console.log(parseInt(targetNumber));
+    // console.log(parseInt(targetNumber));
     entry.target.textContent = 0;
     increment(count, target, targetNumber);
   });
-  console.log(entries);
+  // console.log(entries);
 });
 obseveTargets.forEach((target) => {
   observer.observe(target);
@@ -51,6 +56,7 @@ document.querySelector("#slider").addEventListener("mouseleave", (e) => {
 });
 $(".menu").click(function () {
   $(".nav_ul").addClass("visible");
+  $(".background").addClass("visible");
 });
 $(".close-icon").click(function () {
   $(".nav_ul").removeClass("visible");

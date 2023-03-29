@@ -15,6 +15,70 @@
   --normal: 20px;
   --small: 14px;
 }
+.background {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  transition: opacity 0.3s;
+  opacity: 0;
+  z-index: 500;
+  &.visible {
+    display: block;
+    opacity: 1;
+  }
+}
+.nav_ul {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  width: 250px;
+  right: 0px;
+  top: 0%;
+  align-items: flex-start;
+  background-color: var(--main-color);
+  justify-content: center;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: 0.3s;
+  box-shadow: 0px 0px 100px 100px transparent;
+  &.visible {
+    box-shadow: 0px 0px 100px 0px black;
+    transform: translateX(0px);
+  }
+  .close-icon {
+    display: block;
+    cursor: pointer;
+  }
+  li {
+    border-top: 1px solid var(--lighter-blue);
+    width: 100%;
+    display: block;
+    a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      padding: 32px 12px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: var(--small);
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 18px;
+      padding: 16px;
+      display: block;
+      &.active,
+      &:hover {
+        color: var(--secondery-color);
+      }
+    }
+  }
+}
 .close-icon {
   display: none;
   width: 20px;
@@ -669,6 +733,7 @@ header {
     display: flex;
     gap: calc(6% / 3);
     background-size: cover;
+    justify-content: space-evenly;
     .card {
       padding: 60px 30px;
       width: 23%;
@@ -843,8 +908,10 @@ footer {
       .menu {
         display: block;
       }
-
       ul {
+        display: none;
+      }
+      .nav_ul {
         display: flex;
         flex-direction: column;
         position: fixed;
