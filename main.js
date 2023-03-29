@@ -50,7 +50,6 @@ document.querySelector("#slider").addEventListener("mouseleave", (e) => {
   caption.classList.remove("hidden");
 });
 $(".menu").click(function () {
-  $("close-icon").css("display");
   $(".nav_ul").addClass("visible");
 });
 $(".close-icon").click(function () {

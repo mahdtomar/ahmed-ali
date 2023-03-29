@@ -1044,8 +1044,12 @@ footer .copyrights button {
             transform: translateX(100%);
     -webkit-transition: 0.3s;
     transition: 0.3s;
+    -webkit-box-shadow: 0px 0px 100px 100px transparent;
+            box-shadow: 0px 0px 100px 100px transparent;
   }
   nav .container ul.visible {
+    -webkit-box-shadow: 0px 0px 100px 0px black;
+            box-shadow: 0px 0px 100px 0px black;
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
   }
