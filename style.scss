@@ -1161,6 +1161,8 @@ footer {
       display: grid;
       grid-template-columns: 1fr 1fr;
       justify-items: end;
+      left: 50%;
+      transform: translateX(calc(-50% - 20px));
       p {
         margin: 8px 0px;
         width: 50%;

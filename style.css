@@ -1419,6 +1419,9 @@ footer .copyrights button {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     justify-items: end;
+    left: 50%;
+    -webkit-transform: translateX(calc(-50% - 20px));
+            transform: translateX(calc(-50% - 20px));
   }
   header .steps p {
     margin: 8px 0px;

@@ -59,6 +59,7 @@ $(".menu").click(function () {
   $(".background").addClass("visible");
 });
 $(".close-icon").click(function () {
+  $(".background").removeClass("visible");
   $(".nav_ul").removeClass("visible");
 });
 
