@@ -14,13 +14,13 @@ function increment(count, target, targervalue) {
   setInterval(() => {
     if (count < targervalue) {
       // count++;
-      targervalue > 1000 ? (count = count + 30) : count++;
+      targervalue > 1000 ? (count = count + 20) : count++;
       target.innerText = count;
       if (target.innerText > targervalue) {
         target.innerText = targervalue;
       }
     }
-  }, 5);
+  }, 10);
 }
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

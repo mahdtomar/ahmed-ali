@@ -832,8 +832,8 @@ footer {
   :root {
     --xlarge: 40px;
     --large: 20px;
-    --normal: 14px;
-    --small: 10px;
+    --normal: 12px;
+    --small: 8px;
   }
   .flex {
     flex-direction: column;
@@ -860,7 +860,8 @@ footer {
         transition: 0.3s;
         &.visible {
           transform: translateX(0px);
-        }.close-icon{
+        }
+        .close-icon {
           display: block;
           cursor: pointer;
         }
@@ -1056,16 +1057,25 @@ footer {
 }
 @media (max-width: 500px) {
   nav {
+    .container {
+      .logo {
+        width: 80px;
+      }
+    }
     div.flex {
       flex-direction: row;
     }
   }
   header {
+    height: 680px;
     .car-hero {
-      top: 50%;
+      top: 60%;
       transform: translateY(-50%);
       left: 40%;
       transform: scale(1.5);
+    }
+    .steps {
+      bottom: 10px;
     }
     .container {
       p.hero {
@@ -1095,6 +1105,7 @@ footer {
   .experience {
     background-color: var(--main-color);
     color: white;
+    padding-top: 0px;
     .container {
       .grid {
         display: block;
@@ -1114,26 +1125,34 @@ footer {
         margin: auto;
       }
       .flex {
-        flex-direction: column-reverse;
+        margin-top: 30px;
+        flex-direction: row;
+        flex-wrap: wrap;
         > .flex-vertical {
+          order: 2;
+          width: 50%;
           gap: 50px;
           .feature {
             position: relative;
-            align-items: center;
+            align-items: flex-start;
             width: 50%;
             text-align: center;
             gap: 15px;
             .number {
-              text-align: center;
+              text-align: left;
               font-weight: bold;
               color: var(--secondery-color);
+              display: block;
+              width: 80%;
               &::before {
                 content: "";
-                width: 20%;
+                width: 50%;
                 height: 1px;
                 position: absolute;
                 top: 9px;
-                left: 30px;
+                right: 50%;
+                transform: translateX(50%);
+
                 background-color: var(--secondery-color);
               }
             }
@@ -1142,8 +1161,9 @@ footer {
               font-weight: bold;
               font-size: 22px;
             }
+
             img {
-              width: 100px;
+              width: 100%;
               padding: 20px;
               border: 1px solid var(--lighter-blue);
               border-radius: 8px;
@@ -1151,17 +1171,19 @@ footer {
           }
           &:first-child {
             .feature {
-              text-align: center;
-              align-items: center;
+              text-align: left;
+              align-items: flex-start;
               .number {
-                text-align: center;
+                text-align: left;
                 &::before {
                   content: "";
-                  width: 25%;
+                  width: 50%;
                   height: 1px;
                   position: absolute;
                   top: 9px;
-                  left: 30px;
+                  right: 50%;
+                  transform: translateX(50%);
+                  left: unset;
                   background-color: var(--secondery-color);
                 }
               }
@@ -1169,24 +1191,30 @@ footer {
           }
         }
         > img {
+          order: 1;
           position: static;
           transform: none;
           width: 90%;
-          margin-top: 50px;
+          margin: 10px auto;
         }
       }
     }
   }
   .slider {
-    top: 50px;
+    top: 180px;
     .flex {
-      height: auto;
+      height: 380px;
       .text {
         padding: 30px;
         width: 90%;
       }
       .slider-container {
         width: 90%;
+        .img-container {
+          img {
+            height: 100%;
+          }
+        }
         .before-after {
           flex-direction: row;
         }
@@ -1195,7 +1223,7 @@ footer {
   }
   .testmonials {
     margin-bottom: 0px;
-    padding: 180px 0px;
+    padding: 330px 0px 50px;
     .container {
       margin-top: 0px;
     }
@@ -1229,7 +1257,7 @@ footer {
           font-weight: bold;
           color: var(--main-color);
           &.small {
-            font-size: var(--small);
+            font-size: var(--normal);
             font-weight: normal;
           }
         }
@@ -1275,11 +1303,35 @@ footer {
     }
     .offer {
       flex-direction: column;
+      height: auto;
+      div {
+        p {
+          max-width: 90%;
+          text-align: center;
+          margin: auto;
+          font-size: 14px;
+        }
+        span {
+          margin: 20px auto;
+          text-align: center;
+          font-size: 30px;
+        }
+      }
     }
     .contacts {
       flex-direction: column;
       gap: 40px;
       text-align: center;
+      .small {
+        font-size: var(--normal);
+        margin-bottom: 20px;
+      }
+      .number {
+        font-size: 16px;
+      }
+      img {
+        margin: 35px auto;
+      }
     }
     .copyrights {
       padding: 30px 0px;
