@@ -1059,6 +1059,7 @@ footer .copyrights button {
     display: block;
   }
   nav .container ul li a {
+    font-size: 18px;
     padding: 16px;
     display: block;
   }
